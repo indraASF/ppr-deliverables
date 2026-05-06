@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio Review — Windy Warner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0A;
+      --dark: #1A1A1A;
+      --mid: #6B6B6B;
+      --light: #F7F7F5;
+      --rule: #E2E2E2;
+      --accent: #B8A082;
+      --white: #FFFFFF;
+      --pass: #3D7A5A;
+      --fail: #B03A2E;
+      --partial: #9A7B2E;
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--black);
+      color: var(--white);
+      padding: 100px 80px 80px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .cover-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .cover-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cover-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1 { display: none; } /* covered by cover block */
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 80px;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--dark);
+      margin-top: 8px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--dark);
+    }
+
+    h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    ul {
+      margin: 16px 0 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--mid);
+      padding: 8px 0 8px 20px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ── CHECKLIST ── */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .status {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+      margin-top: 1px;
+    }
+
+    .status.pass { background: #EAF4EE; color: var(--pass); }
+    .status.fail { background: #FBEAEA; color: var(--fail); }
+    .status.partial { background: #FBF5E6; color: var(--partial); }
+
+    .checklist-note {
+      display: block;
+      color: var(--mid);
+      font-size: 13px;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── ANALYSIS BLOCKS ── */
+    .container > p:not(:first-child) {
+      line-height: 1.85;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.25);
+      text-align: center;
+      padding: 36px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .cover { padding: 60px 28px 48px; }
+      .cover-title { font-size: 36px; }
+      .container { padding: 48px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="cover-eyebrow">Art Storefronts × Reilly Thomson</div>
+    <div class="cover-title">Professional Portfolio Review</div>
+    <div class="cover-sub">Prepared for Windy Warner&nbsp;&nbsp;·&nbsp;&nbsp;Evaluated at gallery standard</div>
+  </div>
+
+  <div class="container">
+    <h1>Professional Portfolio Review</h1>
+<h2>Prepared by Reilly Thomson - Art Storefronts</h2>
+<em>Your practice, evaluated at gallery standard.</em>
+<hr>
+<h2>INTRODUCTION</h2>
+<p>Hi Windy Warner! It was a pleasure to learn more about your work in our consultation, and I have spent time with your artworks and online presence since we spoke. This audit was prepared following our consultation and reflects my honest assessment of where your art business stands today. Having worked at David Zwirner, I have seen firsthand what separates the artists who get taken seriously from those who do not. I evaluated your business across four crucial areas: website and public presence, artist statement, niche and positioning, and social media strategy.</p>
+<p>Every player in the art world, from collectors and advisors to gallerists and curators, will encounter your work through these same touchpoints. The quality of these materials will greatly influence the first impressions you make, and whether the right doors open.</p>
+<hr>
+<h2>PART I: WEBSITE AND PUBLIC PRESENCE</h2>
+<p>Let's start with your website and public presence. Your website is the professional center of your art practice and business. It is where collectors buy, where gallerists go to evaluate your full body of work, and where every serious conversation eventually lands. It should be operating at gallery standard.</p>
+<h3>WEBSITE AND CONTENT CHECKLIST:</h3>
+<ul><li><strong>About / Artist Bio page visible in navigation</strong>: PASS</li>
+<li><strong>FAQ page present</strong>: FAIL - Without an FAQ page, collectors cannot quickly find answers about shipping, print care, or commission processes.</li>
+<li><strong>Contact page or visible email address</strong>: PASS</li>
+<li><strong>Email newsletter sign-up present</strong>: FAIL - You are losing potential collectors who would follow your career but are not ready to purchase today.</li>
+<li><strong>Commission inquiry option present</strong>: FAIL - High-net-worth collectors often prefer custom work, and you are missing this revenue stream entirely.</li>
+<li><strong>SEO title and page meta description configured</strong>: PARTIAL - Basic SEO is present but could be optimized for wildlife and nature photography search terms.</li>
+<li><strong>Cohesive visual design</strong>: PASS</li>
+<li><strong>Social media icons visible and linked correctly</strong>: PASS</li>
+<li><strong>Artist portrait present</strong>: PASS</li>
+<li><strong>Photo of artist working or studio environment</strong>: FAIL - Collectors want to see the person behind the work, and action shots build credibility around your field expertise.</li>
+</ul>
+<h3>SHOP AND PRODUCT CHECKLIST:</h3>
+<ul><li><strong>Minimum 10 works listed</strong>: PASS</li>
+<li><strong>Originals and/or limited editions clearly organized</strong>: PARTIAL - The distinction between limited and open editions needs clearer hierarchy on the shop page.</li>
+<li><strong>Best Sellers or Featured Works category present</strong>: FAIL - Without curation, collectors cannot quickly identify your strongest pieces.</li>
+<li><strong>Clean thumbnail images with consistent cropping</strong>: PASS</li>
+<li><strong>Each product page includes title, medium, dimensions</strong>: PASS</li>
+<li><strong>Wall preview or room mockup images present</strong>: PASS</li>
+<li><strong>Checkout button clearly visible</strong>: PASS</li>
+<li><strong>Print size options present</strong>: PASS</li>
+<li><strong>Original artwork linked to available prints</strong>: FAIL - Cross-selling opportunities between originals and prints are completely untapped.</li>
+</ul>
+<h3>PRICING CHECKLIST:</h3>
+<ul><li><strong>Pricing structure appropriate for current market stage</strong>: PASS</li>
+<li><strong>Lead Capture tool active</strong>: FAIL - You are losing contact information from browsers who are not ready to purchase immediately.</li>
+<li><strong>Announcement bar present</strong>: FAIL - No mechanism exists to highlight new work, exhibitions, or limited-time offerings.</li>
+</ul>
+<h3>REILLY WEBSITE ANALYSIS:</h3>
+<p>The technical foundation is solid, but the business infrastructure is underdeveloped for someone seeking to make this their sole income source. What immediately stands out is the quality of the photography itself, which rivals what I see in blue-chip galleries representing established photographers. The site could easily overwhelm visitors with too many choices, but the clean layout prevents that trap effectively. Missing lead capture and commission inquiry options represent immediate lost revenue, particularly given your international travel schedule creates natural scarcity around certain subjects. The absence of behind-the-scenes photography is a missed opportunity to build the personal connection that drives higher-value sales. A gallerist visiting this site would see professional-quality work but question the business acumen. Collectors would engage with the imagery but might not convert without clearer guidance toward featured pieces. The single most important fix is implementing lead capture, because your work clearly attracts viewers who need time to decide on purchases at this price point.</p>
+<hr>
+<h2>PART II: GALLERY TIER ARTIST STATEMENT</h2>
+<p>Your artist statement is the most important piece of writing associated with your practice. Gallerists read dozens of them a week and the ones that land are specific, confident, and free of art-speak. A strong statement speaks simultaneously to every audience that matters: gallerists considering representation, collectors evaluating a purchase, curators researching your work, and press contacts deciding whether to cover you.</p>
+<p>A strong artist statement should include:</p>
+<ul><li>Description of medium and artistic process</li>
+<li>Articulation of recurring themes, subject matter, or conceptual focus</li>
+<li>Art historical references relevant to the practice</li>
+<li>Personal narrative</li>
+<li>Exhibition history, residencies, grants, and accolades where applicable</li>
+<li>Written to speak equally to collectors, gallerists, and institutions</li>
+</ul>
+<h3>ARTIST STATEMENT:</h3>
+<p>Warner's large-format photographs capture apex predators and remote landscapes with the technical precision and emotional immediacy that has defined wildlife photography since the pioneering work of Frans Lanting. Her commitment to unmanipulated imagery positions each photograph as documentary evidence of increasingly rare encounters with the natural world. Working across Africa's Okavango Delta and North America's protected wilderness areas, Warner builds a visual archive that functions both as artistic practice and conservation record. The work emerges from extended field periods where technical mastery must align with unpredictable animal behavior, creating images that balance compositional sophistication with authentic wildlife documentation. Her photographs of grizzlies in Yellowstone and big cats across Botswana reveal not just individual animals but entire ecosystem relationships through careful attention to environmental context. Each print represents weeks of fieldwork condensed into single decisive moments, where Warner's presence becomes invisible to her subjects. The resulting images invite collectors into experiences that remain inaccessible to most, while contributing to a broader cultural conversation about wilderness preservation and human responsibility toward endangered species. Warner's practice operates at the intersection of fine art photography and conservation advocacy, where aesthetic excellence serves both collector interests and environmental awareness.</p>
+<hr>
+<h2>PART III: NICHE AND POSITIONING</h2>
+<p>Niche is not a permanent label, it is a tool. The most successful artists on the primary market have developed a clear, recognizable body of work that speaks directly to a specific collector sensibility, cultural interest, or subject matter community. This section evaluates how well your current work and positioning connect with the buyers most likely to respond to it.</p>
+<h3>NICHE ANALYSIS:</h3>
+<p>Your niche is luxury adventure photography for high-net-worth collectors who value authentic wilderness experiences and conservation efforts. This positions you within the established market for blue-chip nature photography, competing with artists like David Yarrow and Joel Sartore, but with your own authentic voice developed through extensive fieldwork. The current positioning serves this niche well through emphasis on unmanipulated imagery and personal presence in remote locations. However, the business model needs refinement to capture the premium pricing that this collector base expects and can afford.</p>
+<h3>5 SUBREDDITS:</h3>
+<p>1. <strong>r/wildlifephotography</strong> - Active community of 2.8M members sharing techniques and celebrating wildlife imagery where your expertise would establish credibility</p>
+<p>2. <strong>r/NatureIsFuckingLit</strong> - Popular nature appreciation community with 4.5M members who share striking wildlife and landscape content</p>
+<p>3. <strong>r/EarthPorn</strong> - Landscape photography community with 27M members where your scenic work would reach photography collectors and enthusiasts</p>
+<p>4. <strong>r/bigcats</strong> - Specialized community focused on lions, leopards, and cheetahs where your African wildlife work would find dedicated audiences</p>
+<p>5. <strong>r/Yellowstone</strong> - National park enthusiasts and visitors who would connect with your grizzly and landscape photography from the region</p>
+<h3>5 FACEBOOK GROUPS:</h3>
+<p>1. <strong>Wildlife Photography</strong> - 485K members sharing techniques and celebrating wildlife imagery where your African and North American work would resonate</p>
+<p>2. <strong>Nature Photography Community</strong> - Large group of serious photographers and collectors discussing equipment, locations, and artistic approaches</p>
+<p>3. <strong>African Safari Enthusiasts</strong> - Travelers and wildlife lovers who have visited or dream of visiting locations you photograph professionally</p>
+<p>4. <strong>Fine Art Photography Collectors</strong> - Buyers and sellers of photography prints discussing artists, pricing, and market trends</p>
+<p>5. <strong>Yellowstone National Park Photography</strong> - Dedicated community of park visitors and wildlife enthusiasts who would appreciate your grizzly work</p>
+<h3>5 INSTAGRAM ACCOUNTS:</h3>
+<p>1. <strong>@natgeo</strong> - National Geographic's main account represents the gold standard in wildlife photography that your collectors likely follow</p>
+<p>2. <strong>@joelsartore</strong> - Established wildlife photographer whose collector base overlaps significantly with your target market</p>
+<p>3. <strong>@davidyarrowphotography</strong> - High-end wildlife photographer whose pricing and collector relationships represent your career trajectory</p>
+<p>4. <strong>@paulnicklen</strong> - Conservation photographer whose environmental advocacy aligns with your authentic wilderness messaging</p>
+<p>5. <strong>@stevewinterphoto</strong> - Wildlife photographer whose big cat work and storytelling approach mirrors your own artistic focus</p>
+<hr>
+<h2>PART IV: SOCIAL MEDIA STRATEGY</h2>
+<p>Social media is often the first place a gallerist, advisor, or collector encounters your work, or looks you up after hearing your name. Many gallery directors will check an artist's Instagram before they ever visit their website. Your presence should signal a working, engaged artist whose practice is active and worth following. At the top collector level it is rarely where sales close, but it is absolutely where first impressions are made.</p>
+<h3>INSTAGRAM CHECKLIST:</h3>
+<ul><li><strong>Bio includes medium, location, and link to website</strong>: PASS</li>
+<li><strong>Profile image is professional</strong>: PASS  </li>
+<li><strong>Consistent posting cadence evident from grid</strong>: PARTIAL - Posting appears irregular, which can signal an inactive or unprofessional practice to gallerists</li>
+<li><strong>Process and in-progress content present</strong>: FAIL - No behind-the-scenes content showing you working in the field, which is crucial for building authenticity in wildlife photography</li>
+<li><strong>Finished work featured with thoughtful captions</strong>: PARTIAL - Images are strong but captions lack the storytelling that would engage collectors emotionally</li>
+<li><strong>Community engagement visible</strong>: FAIL - Limited interaction with followers and other photographers reduces algorithmic reach and professional networking</li>
+<li><strong>Studio or behind-the-scenes content present</strong>: FAIL - Field photography and equipment shots would build credibility around your technical expertise and access to remote locations</li>
+</ul>
+<h3>INSTAGRAM ANALYSIS:</h3>
+<p>The account reads as a portfolio rather than an active artistic practice, which immediately signals amateur status to gallery professionals. Your photography quality easily matches established wildlife photographers, but the presentation lacks the storytelling and behind-the-scenes authentication that separates fine art from hobbyist work. The inconsistent posting schedule suggests this is not a serious business endeavor, despite your stated goal of making it your primary income source. The single most important shift is incorporating regular process documentation from your field work, which would demonstrate both professional commitment and the extraordinary access that justifies premium pricing.</p>
+<hr>
+<h2>CLOSING</h2>
+<p>This audit reflects the state of your business at the time of our consultation. My recommendations are a starting point, not a final destination. The strongest art businesses are built incrementally, and consistent effort over time yields results that no single change can produce alone.</p>
+<p>As you work through these, do not hesitate to reach out to our team in our weekly webinars with any questions.</p>
+<p>I am genuinely excited about what is ahead for you.</p>
+<p>\- Reilly</p>
+<hr>
+<h2>APPENDIX</h2>
+<strong>Useful Resources from Art Storefronts</strong>
+<ul><li>Dominating Your Niche</li>
+<li>Instagram Best Practices Before and After 1000 Followers  </li>
+<li>1000 Followers Strategy for Facebook</li>
+<li>How to Invite Your Facebook Friends to Like Your Business Page</li>
+<li>Social Media Security Protecting Your Instagram and Facebook Accounts</li>
+<li>Become an Instagram Pro 30-Day Bootcamp</li>
+<li>Summer School Breaking Down Successful Social Media Content</li>
+<li>Fall Content Academy Level Up Your Social Media Game</li>
+<li>Reddit 101</li>
+<li>Ultimate Guide for Successful Art Shows and Fairs</li>
+<li>The Pivot Playbook</li>
+<li>Regular Giveaway Playbook</li>
+<li>The Custom Artwork Strategy</li>
+<li>Best Practices for Selling Limited Editions</li>
+<li>The Live Art Show Playbook</li>
+<li>Niche Master Course Workflow Find Your True Audience</li></ul>
+  </div>
+
+  <div class="footer">
+    Art Storefronts × Reilly Thomson &nbsp;·&nbsp; Professional Portfolio Review &nbsp;·&nbsp; Confidential
+  </div>
+
+</body>
+</html>
