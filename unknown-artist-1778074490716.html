@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio Review — Unknown Artist</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0A;
+      --dark: #1A1A1A;
+      --mid: #6B6B6B;
+      --light: #F5F5F3;
+      --rule: #E2E2E2;
+      --accent: #B8A082;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .cover {
+      background: var(--black);
+      color: var(--white);
+      padding: 120px 80px;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .cover-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .cover h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .cover .cover-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    .intro {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+
+    .intro p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 72px;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--dark);
+      padding-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+    }
+
+    .checklist-item {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-left: 3px solid var(--rule);
+      margin-bottom: 8px;
+      line-height: 1.5;
+      color: var(--dark);
+    }
+
+    .checklist-item.pass { border-left-color: #4A7C59; }
+    .checklist-item.fail { border-left-color: #C0392B; }
+    .checklist-item.partial { border-left-color: #B8860B; }
+
+    .analysis {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      padding: 32px 36px;
+      margin: 32px 0;
+    }
+
+    .analysis p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .community-list {
+      margin: 24px 0;
+    }
+
+    .community-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+
+    .community-item strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .community-item span {
+      color: var(--mid);
+    }
+
+    .closing {
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .signature {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--dark);
+      margin-top: 32px;
+    }
+
+    .appendix {
+      margin-top: 72px;
+      padding: 48px;
+      background: var(--light);
+    }
+
+    .appendix h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .appendix p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--mid);
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      padding: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .cover { padding: 60px 32px; }
+      .cover h1 { font-size: 32px; }
+      .container { padding: 48px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="cover-eyebrow">Art Storefronts × Reilly Thomson</div>
+    <h1>Professional Portfolio Review</h1>
+    <p class="cover-sub">Prepared for Unknown Artist &nbsp;·&nbsp; Evaluated at gallery standard</p>
+  </div>
+
+  <div class="container">
+    <p># Professional Portfolio Review</p>
+<p>**Prepared by Reilly Thomson - Art Storefronts**  </p>
+<p>*Your practice, evaluated at gallery standard.*</p>
+<p>---</p>
+<p>## INTRODUCTION</p>
+<p>Hi Unknown Artist! It was a pleasure to learn more about your work in our consultation, and I have spent time with your artworks and online presence since we spoke. This audit was prepared following our consultation and reflects my honest assessment of where your art business stands today. Having worked at David Zwirner, I have seen firsthand what separates the artists who get taken seriously from those who do not. I evaluated your business across four crucial areas: website and public presence, artist statement, niche and positioning, and social media strategy.</p>
+<p>Every player in the art world, from collectors and advisors to gallerists and curators, will encounter your work through these same touchpoints. The quality of these materials will greatly influence the first impressions you make, and whether the right doors open.</p>
+<p>---</p>
+<p>## PART I: WEBSITE AND PUBLIC PRESENCE</p>
+<p>Let's start with your website and public presence. Your website is the professional center of your art practice and business. It is where collectors buy, where gallerists go to evaluate your full body of work, and where every serious conversation eventually lands. It should be operating at gallery standard.</p>
+<p>**WEBSITE AND CONTENT CHECKLIST:**</p>
+<p class="checklist-item">- About / Artist Bio page visible in navigation: **FAIL** - No website provided means no professional presence exists for serious collectors to evaluate your practice.</p>
+<p class="checklist-item">- FAQ page present: **FAIL** - Without a website, there is no mechanism to address collector questions professionally.</p>
+<p class="checklist-item">- Contact page or visible email address: **FAIL** - No clear path for gallery inquiries or collector communications.</p>
+<p class="checklist-item">- Email newsletter sign-up present: **FAIL** - Missing the primary tool for maintaining collector relationships over time.</p>
+<p class="checklist-item">- Commission inquiry option present: **FAIL** - No system in place to capture custom work opportunities.</p>
+<p class="checklist-item">- SEO title and page meta description configured: **FAIL** - Zero discoverability in search results where many collectors begin their research.</p>
+<p class="checklist-item">- Cohesive visual design: **FAIL** - No digital presence means no professional first impression.</p>
+<p class="checklist-item">- Social media icons visible and linked correctly: **FAIL** - No cross-platform integration to build comprehensive online presence.</p>
+<p class="checklist-item">- Artist portrait present: **FAIL** - Collectors want to know the person behind the work they are considering.</p>
+<p class="checklist-item">- Photo of artist working or studio environment: **FAIL** - Missing the behind-the-scenes authenticity that builds collector trust.</p>
+<p>**SHOP AND PRODUCT CHECKLIST:**</p>
+<p class="checklist-item">- Minimum 10 works listed: **FAIL** - No sales platform means no direct collector access to available works.</p>
+<p class="checklist-item">- Originals and/or limited editions clearly organized: **FAIL** - No clear inventory presentation for serious buyers.</p>
+<p class="checklist-item">- Best Sellers or Featured Works category present: **FAIL** - No social proof or guidance for new collectors discovering your work.</p>
+<p class="checklist-item">- Clean thumbnail images with consistent cropping: **FAIL** - No visual presentation standards established.</p>
+<p class="checklist-item">- Each product page includes title, medium, dimensions: **FAIL** - Basic artwork information unavailable to interested collectors.</p>
+<p class="checklist-item">- Wall preview or room mockup images present: **FAIL** - Collectors cannot visualize works in their spaces.</p>
+<p class="checklist-item">- Checkout button clearly visible: **FAIL** - No clear path to purchase even if a collector is ready to buy.</p>
+<p class="checklist-item">- Print size options present: **FAIL** - Missing accessible price points for emerging collectors.</p>
+<p class="checklist-item">- Original artwork linked to available prints: **FAIL** - No cross-selling strategy to maximize each collector interaction.</p>
+<p>**PRICING CHECKLIST:**</p>
+<p class="checklist-item">- Pricing structure appropriate for current market stage: **FAIL** - No pricing information provided means no market positioning strategy.</p>
+<p class="checklist-item">- Lead Capture tool active: **FAIL** - No system to build relationships with interested but not-yet-ready collectors.</p>
+<p class="checklist-item">- Announcement bar present: **FAIL** - No way to communicate current exhibitions, sales, or studio news.</p>
+<p>**REILLY WEBSITE ANALYSIS:** </p>
+<p>The absence of any website is the most significant barrier to professional recognition in your practice right now. While emerging artists might think they can build momentum through social media alone, every serious collector, gallery director, and curator expects a professional website as the foundation of an art business. Without this basic infrastructure, you are essentially invisible to the primary market regardless of how strong your work might be. The lack of any digital presence signals to industry professionals that this is not yet a serious practice worth their attention or investment. A gallery considering representation would have nowhere to send their collectors to view your complete body of work. The single most important action is establishing a professional website with clear navigation, high-quality images, and direct purchase options. Until this foundation exists, every other marketing effort operates at a significant disadvantage.</p>
+<p>---</p>
+<p>## PART II: GALLERY TIER ARTIST STATEMENT</p>
+<p>Your artist statement is the most important piece of writing associated with your practice. Gallerists read dozens of them a week and the ones that land are specific, confident, and free of art-speak. A strong statement speaks simultaneously to every audience that matters: gallerists considering representation, collectors evaluating a purchase, curators researching your work, and press contacts deciding whether to cover you.</p>
+<p>A strong artist statement should include:</p>
+<p class="checklist-item">- Description of medium and artistic process</p>
+<p class="checklist-item">- Articulation of recurring themes, subject matter, or conceptual focus</p>
+<p class="checklist-item">- Art historical references relevant to the practice</p>
+<p class="checklist-item">- Personal narrative</p>
+<p class="checklist-item">- Exhibition history, residencies, grants, and accolades where applicable</p>
+<p class="checklist-item">- Written to speak equally to collectors, gallerists, and institutions</p>
+<p>**ARTIST STATEMENT:**</p>
+<p>Without specific information about your artistic practice, medium, or conceptual focus, I cannot provide you with an authentic artist statement that accurately represents your work. An effective artist statement must be grounded in the actual processes, materials, and ideas that drive your practice. The strongest statements I encounter at David Zwirner emerge from artists who can articulate precisely what they make and why they make it, often connecting their personal investigation to broader cultural or art historical conversations. A generic statement would do more harm than good, as gallery directors and serious collectors can immediately identify inauthentic or templated language. Once you provide details about your specific practice, medium, themes, and working process, I can craft a statement that positions your work within the appropriate art historical context and speaks directly to the collectors most likely to respond to it. The statement should feel like a natural extension of the work itself, not a separate marketing exercise.</p>
+<p>---</p>
+<p>## PART III: NICHE AND POSITIONING</p>
+<p>Niche is not a permanent label, it is a tool. The most successful artists on the primary market have developed a clear, recognizable body of work that speaks directly to a specific collector sensibility, cultural interest, or subject matter community. This section evaluates how well your current work and positioning connect with the buyers most likely to respond to it.</p>
+<p>**NICHE ANALYSIS:**</p>
+<p>Without information about your artistic practice, medium, subject matter, or collector vision, I cannot identify your specific market niche or evaluate your positioning strategy. Effective niche identification requires understanding what you make, who responds to that type of work, and how your particular approach differs from other artists working in similar territory. Once you provide details about your practice, we can identify the precise collector communities most likely to invest in your work.</p>
+<p>**5 SUBREDDITS:**</p>
+<p>Cannot provide relevant subreddit recommendations without knowing your artistic medium, subject matter, or target collector interests.</p>
+<p>**5 FACEBOOK GROUPS:**</p>
+<p>Cannot provide relevant Facebook group recommendations without understanding your specific artistic practice and ideal collector profile.</p>
+<p>**5 INSTAGRAM ACCOUNTS:**</p>
+<p>Cannot provide strategic Instagram account recommendations without knowing your niche, collector demographic, or artistic focus.</p>
+<p>---</p>
+<p>## PART IV: SOCIAL MEDIA STRATEGY</p>
+<p>Social media is often the first place a gallerist, advisor, or collector encounters your work, or looks you up after hearing your name. Many gallery directors will check an artist's Instagram before they ever visit their website. Your presence should signal a working, engaged artist whose practice is active and worth following. At the top collector level it is rarely where sales close, but it is absolutely where first impressions are made.</p>
+<p>**INSTAGRAM CHECKLIST:**</p>
+<p class="checklist-item">- Bio includes medium, location, and link to website: **FAIL** - No Instagram handle provided means no social media presence for discovery.</p>
+<p class="checklist-item">- Profile image is professional: **FAIL** - No profile exists to evaluate.</p>
+<p class="checklist-item">- Consistent posting cadence evident from grid: **FAIL** - No posting history to assess engagement strategy.</p>
+<p class="checklist-item">- Process and in-progress content present: **FAIL** - No behind-the-scenes content to build collector interest.</p>
+<p class="checklist-item">- Finished work featured with thoughtful captions: **FAIL** - No platform to showcase completed works professionally.</p>
+<p class="checklist-item">- Community engagement visible: **FAIL** - No social proof of collector or peer recognition.</p>
+<p class="checklist-item">- Studio or behind-the-scenes content present: **FAIL** - Missing the authenticity that builds trust with potential buyers.</p>
+<p>**INSTAGRAM ANALYSIS:**</p>
+<p>The absence of any Instagram presence represents a significant missed opportunity for building collector relationships and industry recognition. Gallery directors routinely check artists' Instagram profiles before scheduling studio visits, and collectors often discover new work through the platform's recommendation algorithm. Without an active, professional presence, you are invisible to these crucial discovery moments. The most important shift would be establishing a consistent posting schedule that balances finished work with authentic studio process documentation.</p>
+<p>---</p>
+<p>## CLOSING</p>
+<p>This audit reflects the state of your business at the time of our consultation. My recommendations are a starting point, not a final destination. The strongest art businesses are built incrementally, and consistent effort over time yields results that no single change can produce alone.</p>
+<p>As you work through these, do not hesitate to reach out to our team in our weekly webinars with any questions.</p>
+<p>I am genuinely excited about what is ahead for you.</p>
+<p class="checklist-item">- Reilly</p>
+<p>---</p>
+<p>## APPENDIX</p>
+<p>**Useful Resources from Art Storefronts**</p>
+<p class="checklist-item">- Dominating Your Niche</p>
+<p class="checklist-item">- Instagram Best Practices Before and After 1000 Followers</p>
+<p class="checklist-item">- 1000 Followers Strategy for Facebook</p>
+<p class="checklist-item">- How to Invite Your Facebook Friends to Like Your Business Page</p>
+<p class="checklist-item">- Social Media Security Protecting Your Instagram and Facebook Accounts</p>
+<p class="checklist-item">- Become an Instagram Pro 30-Day Bootcamp</p>
+<p class="checklist-item">- Summer School Breaking Down Successful Social Media Content</p>
+<p class="checklist-item">- Fall Content Academy Level Up Your Social Media Game</p>
+<p class="checklist-item">- Reddit 101</p>
+<p class="checklist-item">- Ultimate Guide for Successful Art Shows and Fairs</p>
+<p class="checklist-item">- The Pivot Playbook</p>
+<p class="checklist-item">- Regular Giveaway Playbook</p>
+<p class="checklist-item">- The Custom Artwork Strategy</p>
+<p class="checklist-item">- Best Practices for Selling Limited Editions</p>
+<p class="checklist-item">- The Live Art Show Playbook</p>
+<p class="checklist-item">- Niche Master Course Workflow Find Your True Audience</p>
+  </div>
+
+  <div class="footer">
+    Art Storefronts × Reilly Thomson &nbsp;·&nbsp; Professional Portfolio Review &nbsp;·&nbsp; Confidential
+  </div>
+
+</body>
+</html>
