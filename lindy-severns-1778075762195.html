@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio Review — Lindy Severns</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0A;
+      --dark: #1A1A1A;
+      --mid: #6B6B6B;
+      --light: #F5F5F3;
+      --rule: #E2E2E2;
+      --accent: #B8A082;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .cover {
+      background: var(--black);
+      color: var(--white);
+      padding: 120px 80px;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .cover-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .cover h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .cover .cover-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    .intro {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+
+    .intro p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 72px;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--dark);
+      padding-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+    }
+
+    .checklist-item {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-left: 3px solid var(--rule);
+      margin-bottom: 8px;
+      line-height: 1.5;
+      color: var(--dark);
+    }
+
+    .checklist-item.pass { border-left-color: #4A7C59; }
+    .checklist-item.fail { border-left-color: #C0392B; }
+    .checklist-item.partial { border-left-color: #B8860B; }
+
+    .analysis {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      padding: 32px 36px;
+      margin: 32px 0;
+    }
+
+    .analysis p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .community-list {
+      margin: 24px 0;
+    }
+
+    .community-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+
+    .community-item strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .community-item span {
+      color: var(--mid);
+    }
+
+    .closing {
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .signature {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--dark);
+      margin-top: 32px;
+    }
+
+    .appendix {
+      margin-top: 72px;
+      padding: 48px;
+      background: var(--light);
+    }
+
+    .appendix h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .appendix p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--mid);
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      padding: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .cover { padding: 60px 32px; }
+      .cover h1 { font-size: 32px; }
+      .container { padding: 48px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="cover-eyebrow">Art Storefronts × Reilly Thomson</div>
+    <h1>Professional Portfolio Review</h1>
+    <p class="cover-sub">Prepared for Lindy Severns &nbsp;·&nbsp; Evaluated at gallery standard</p>
+  </div>
+
+  <div class="container">
+    <h1>Professional Portfolio Review</h1>
+<p class="subtitle">Prepared by Reilly Thomson - Art Storefronts</p>
+<p class="subtitle">Your practice, evaluated at gallery standard.</p>
+<p>**INTRODUCTION**</p>
+<p>Hi Lindy Severns! It was a pleasure to learn more about your work in our consultation, and I have spent time with your artworks and online presence since we spoke. This audit was prepared following our consultation and reflects my honest assessment of where your art business stands today. Having worked at David Zwirner, I have seen firsthand what separates the artists who get taken seriously from those who do not. I evaluated your business across four crucial areas: website and public presence, artist statement, niche and positioning, and social media strategy.</p>
+<p>Every player in the art world, from collectors and advisors to gallerists and curators, will encounter your work through these same touchpoints. The quality of these materials will greatly influence the first impressions you make, and whether the right doors open.</p>
+<p>**PART I: WEBSITE AND PUBLIC PRESENCE**</p>
+<p>Let's start with your website and public presence. Your website is the professional center of your art practice and business. It is where collectors buy, where gallerists go to evaluate your full body of work, and where every serious conversation eventually lands. It should be operating at gallery standard.</p>
+<p>**WEBSITE AND CONTENT CHECKLIST:**</p>
+<p class="checklist-item">- About / Artist Bio page visible in navigation: PASS</p>
+<p class="checklist-item">- FAQ page present: FAIL - Without an FAQ, collectors cannot quickly find answers to basic questions about shipping, framing, or commission timelines.</p>
+<p class="checklist-item">- Contact page or visible email address: PASS</p>
+<p class="checklist-item">- Email newsletter sign-up present: FAIL - You are missing opportunities to build a direct relationship with interested visitors.</p>
+<p class="checklist-item">- Commission inquiry option present: PARTIAL - While mentioned in your bio, there is no dedicated commission page or clear process outlined.</p>
+<p class="checklist-item">- SEO title and page meta description configured: FAIL - Your site will struggle to appear in search results for Texas landscape painters or Big Bend art.</p>
+<p class="checklist-item">- Cohesive visual design: PASS</p>
+<p class="checklist-item">- Social media icons visible and linked correctly: PASS</p>
+<p class="checklist-item">- Artist portrait present: PASS</p>
+<p class="checklist-item">- Photo of artist working or studio environment: PARTIAL - Your bio mentions your new studio but visitors cannot visualize your working environment.</p>
+<p>**SHOP AND PRODUCT CHECKLIST:**</p>
+<p class="checklist-item">- Minimum 10 works listed: PASS</p>
+<p class="checklist-item">- Originals and/or limited editions clearly organized: PASS</p>
+<p class="checklist-item">- Best Sellers or Featured Works category present: FAIL - First-time visitors have no guidance on where to start with your extensive catalog.</p>
+<p class="checklist-item">- Clean thumbnail images with consistent cropping: PASS</p>
+<p class="checklist-item">- Each product page includes title, medium, dimensions: PASS</p>
+<p class="checklist-item">- Wall preview or room mockup images present: FAIL - Collectors need to visualize your large-scale sky paintings in their spaces.</p>
+<p class="checklist-item">- Checkout button clearly visible: PASS</p>
+<p class="checklist-item">- Print size options present: PASS</p>
+<p class="checklist-item">- Original artwork linked to available prints: PARTIAL - The connection between originals and print options could be clearer for buyers.</p>
+<p>**PRICING CHECKLIST:**</p>
+<p class="checklist-item">- Pricing structure appropriate for current market stage: PASS</p>
+<p class="checklist-item">- Lead Capture tool active: FAIL - You have no way to follow up with visitors who are not ready to buy today.</p>
+<p class="checklist-item">- Announcement bar present: FAIL - You are missing prime real estate to announce new work or studio news.</p>
+<p>**REILLY WEBSITE ANALYSIS:**</p>
+<p>The first thing that strikes me about your website is how effectively it communicates the scale and drama of your sky paintings. Your photography captures the luminous quality that makes your work distinctive, and the clean layout allows the paintings to dominate the experience. The personal narrative woven throughout feels authentic rather than manufactured, which is rare in artist websites. However, a gallerist evaluating your practice would notice immediately that basic business infrastructure is missing. Without lead capture, you are losing every visitor who is interested but not ready to purchase, and without room mockups, collectors cannot envision your large works in their spaces. The most pressing issue is the lack of any system to convert interest into ongoing relationships. Your story is compelling and your work is strong, but the site functions more like a portfolio than a business tool.</p>
+<p>**PART II: GALLERY TIER ARTIST STATEMENT**</p>
+<p>Your artist statement is the most important piece of writing associated with your practice. Gallerists read dozens of them a week and the ones that land are specific, confident, and free of art-speak. A strong statement speaks simultaneously to every audience that matters: gallerists considering representation, collectors evaluating a purchase, curators researching your work, and press contacts deciding whether to cover you.</p>
+<p>A strong artist statement should include:</p>
+<p class="checklist-item">- Description of medium and artistic process</p>
+<p class="checklist-item">- Articulation of recurring themes, subject matter, or conceptual focus</p>
+<p class="checklist-item">- Art historical references relevant to the practice</p>
+<p class="checklist-item">- Personal narrative</p>
+<p class="checklist-item">- Exhibition history, residencies, grants, and accolades where applicable</p>
+<p class="checklist-item">- Written to speak equally to collectors, gallerists, and institutions</p>
+<p>**ARTIST STATEMENT:**</p>
+<p>Lindy Cook Severns creates oil paintings that capture the expansive skies and rugged landscapes of Texas with an intensity of color that transforms familiar terrain into something almost mystical. Working primarily en plein air, she builds layers of pigment that respond to the shifting light conditions of the desert Southwest, creating works that pulse with the energy of direct observation. Her paintings engage with the tradition of American landscape painting established by artists like Georgia O'Keeffe and the Taos Society, yet her approach remains distinctly contemporary in its bold color relationships and experimental technique. After two decades of nomadic life in an RV throughout Big Bend country, Severns developed her signature style in isolation, free from academic constraints or market pressures. Her recent transition to a permanent studio in Central Texas has expanded her palette to include the softer greens and blues of Hill Country flora, while maintaining the dramatic sky work that defines her practice. Named Distinguished Alumni by Texas Tech University's College of Arts and Sciences in 2020, Severns represents a new generation of regional painters who refuse the false choice between local subject matter and contemporary relevance. Her work speaks directly to collectors who understand that authentic American landscape painting continues to evolve outside traditional art centers. These paintings position themselves within the ongoing conversation about place, identity, and the relationship between artist and environment in contemporary American art.</p>
+<p>**PART III: NICHE AND POSITIONING**</p>
+<p>Niche is not a permanent label, it is a tool. The most successful artists on the primary market have developed a clear, recognizable body of work that speaks directly to a specific collector sensibility, cultural interest, or subject matter community. This section evaluates how well your current work and positioning connect with the buyers most likely to respond to it.</p>
+<p>**NICHE ANALYSIS:**</p>
+<p>Your niche is contemporary Texas landscape painting with particular strength in dramatic sky work and Big Bend desert scenes. This positions you perfectly within the robust market for regional American landscape painting, especially among collectors who have personal connections to Texas or the Southwest. Your pricing structure and subject matter align well with collectors of contemporary Western art, heritage tourism buyers, and interior designers working on ranch properties or Southwestern-themed spaces. The challenge is that regional landscape painting can be dismissed by contemporary galleries, but your experimental approach and color intensity elevate the work beyond typical plein air painting.</p>
+<p>**5 SUBREDDITS:**</p>
+<p>1. r/NationalPark - Active community sharing Big Bend photography and experiences, perfect audience for your desert landscapes</p>
+<p>2. r/texas - Large Texas-focused community that celebrates state culture and landmarks</p>
+<p>3. r/pleinair - Dedicated to outdoor painting with active artist and collector participation</p>
+<p>4. r/landscapepainting - Focused community discussing contemporary landscape art techniques and artists</p>
+<p>5. r/westernart - Collectors and enthusiasts of contemporary Western American art</p>
+<p>**5 FACEBOOK GROUPS:**</p>
+<p>1. Big Bend National Park Fans - Enthusiasts and frequent visitors to your primary subject matter location</p>
+<p>2. Texas Artists and Art Lovers - State-focused art community with active buying and selling</p>
+<p>3. Plein Air Painters - Professional network of outdoor painters and their collectors</p>
+<p>4. Contemporary Western Art Collectors - Focused buying community for your price range and style</p>
+<p>5. Hill Country Art Trail - Central Texas art community aligned with your new studio location</p>
+<p>**5 INSTAGRAM ACCOUNTS:**</p>
+<p>1. @bigbendnps - Official National Park Service account followed by your ideal landscape collectors</p>
+<p>2. @texasmonthly - Texas culture publication whose followers appreciate authentic regional art</p>
+<p>3. @pleinairmagazine - Outdoor painting community with collector following</p>
+<p>4. @westernartcollector - Magazine account followed by buyers in your price range</p>
+<p>5. @ranchandreata - Luxury ranch lifestyle account whose followers buy large-scale landscape paintings</p>
+<p>**PART IV: SOCIAL MEDIA STRATEGY**</p>
+<p>Social media is often the first place a gallerist, advisor, or collector encounters your work, or looks you up after hearing your name. Many gallery directors will check an artist's Instagram before they ever visit their website. Your presence should signal a working, engaged artist whose practice is active and worth following. At the top collector level it is rarely where sales close, but it is absolutely where first impressions are made.</p>
+<p>**INSTAGRAM CHECKLIST:**</p>
+<p class="checklist-item">- Bio includes medium, location, and link to website: PASS</p>
+<p class="checklist-item">- Profile image is professional: PASS</p>
+<p class="checklist-item">- Consistent posting cadence evident from grid: PARTIAL - Your posting frequency appears irregular which can signal an inactive practice</p>
+<p class="checklist-item">- Process and in-progress content present: PASS</p>
+<p class="checklist-item">- Finished work featured with thoughtful captions: PARTIAL - Many of your captions are brief and miss opportunities to tell the story behind each piece</p>
+<p class="checklist-item">- Community engagement visible: FAIL - Limited evidence of responding to comments or engaging with other accounts in your field</p>
+<p class="checklist-item">- Studio or behind-the-scenes content present: PASS</p>
+<p>**INSTAGRAM ANALYSIS:**</p>
+<p>Your Instagram effectively showcases the scale and drama that makes your sky paintings distinctive, and the mix of finished works with process shots demonstrates an active, professional practice. The @bigbendartist handle perfectly aligns with your niche positioning and makes you discoverable to the right audience. However, a gallerist scrolling through would notice immediately that community engagement is minimal, which can signal an artist who is not building relationships within their field. The most important shift would be developing more substantial captions that tell the stories behind individual paintings, as your nomadic background and recent studio transition provide rich narrative content that collectors want to connect with.</p>
+<p>**CLOSING**</p>
+<p>This audit reflects the state of your business at the time of our consultation. My recommendations are a starting point, not a final destination. The strongest art businesses are built incrementally, and consistent effort over time yields results that no single change can produce alone.</p>
+<p>As you work through these, do not hesitate to reach out to our team in our weekly webinars with any questions.</p>
+<p>I am genuinely excited about what is ahead for you.</p>
+<p class="checklist-item">- Reilly</p>
+<p>**APPENDIX**</p>
+<p>Useful Resources from Art Storefronts</p>
+<p>Dominating Your Niche</p>
+<p>Instagram Best Practices Before and After 1000 Followers</p>
+<p>1000 Followers Strategy for Facebook</p>
+<p>How to Invite Your Facebook Friends to Like Your Business Page</p>
+<p>Social Media Security Protecting Your Instagram and Facebook Accounts</p>
+<p>Become an Instagram Pro 30-Day Bootcamp</p>
+<p>Summer School Breaking Down Successful Social Media Content</p>
+<p>Fall Content Academy Level Up Your Social Media Game</p>
+<p>Reddit 101</p>
+<p>Ultimate Guide for Successful Art Shows and Fairs</p>
+<p>The Pivot Playbook</p>
+<p>Regular Giveaway Playbook</p>
+<p>The Custom Artwork Strategy</p>
+<p>Best Practices for Selling Limited Editions</p>
+<p>The Live Art Show Playbook</p>
+<p>Niche Master Course Workflow Find Your True Audience</p>
+  </div>
+
+  <div class="footer">
+    Art Storefronts × Reilly Thomson &nbsp;·&nbsp; Professional Portfolio Review &nbsp;·&nbsp; Confidential
+  </div>
+
+</body>
+</html>
